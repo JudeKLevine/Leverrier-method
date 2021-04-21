@@ -1,1 +1,0 @@
-# Leverrier-method
