@@ -1,8 +1,13 @@
+#--------------CALCUL DU POLYNOME CARACTERISTIQUE---------------#
+# Pour ce calcul, nous n'utiliserons aucune fonction predefinie #
+
+# Produit d'une matrice et un vecteur
 def produitMat(m1, m2):
   m = []
   if len(m1[0]) != len(m2):
     print("erreur")
     return False
+  
   for i in range(len(m1)):
     ligne = []
     for j in range(len(m2[0])):
@@ -11,8 +16,10 @@ def produitMat(m1, m2):
         element = element + m2[i][k] * m1[k][j]
       ligne.append(element)
     m.append(ligne)
+    
   return m
 
+# La trace d'une matrice de taille n
 def traceMat(n):
     sum = 0
     for i in range(len(n)):
@@ -20,7 +27,8 @@ def traceMat(n):
             if i==j:
                 sum = sum + n[i][j]
     return sum
-
+  
+# somme de deux matrices
 def somme_mat(mat1,mat2):
     k = []
     for i in range(len(mat1)):
@@ -30,7 +38,8 @@ def somme_mat(mat1,mat2):
             colonne.append(a)
         k.append(colonne)
     return k
-
+  
+# Produit d'une matrice par un scalaire
 def pro_mat_sca(mat1,b):
     k = []
     for i in range(len(mat1)):
@@ -40,6 +49,8 @@ def pro_mat_sca(mat1,b):
             colonne.append(a)
         k.append(colonne)
     return k
+  
+# La matrice identité de taille n  
 def id(n):
     L = []
     for i in range(n):
@@ -52,6 +63,7 @@ def id(n):
                 L[i].append(0)
     return L
 
+# Matrices recursives de Leverrier 
 def calculMat(L, n):
     M = []
     V = id(len(L))
@@ -63,6 +75,9 @@ def calculMat(L, n):
         C = somme_mat(calculMat(L, n-1),B)
         M = produitMat(C,L)
     return M
+  
+# Tableau contenant les coeficients des des mônomes ordonés 
+# du polynome caracterisetique de la matrice L
 def leverier(L):
     Coef = [(-1)**len(L)]
     L = [calculMat(L, i) for i in range(len(L))]
