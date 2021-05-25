@@ -1,4 +1,4 @@
-## cette methode permet de detreminer le pgcd de deux 
+## cette methode permet de determiner le pgcd de deux 
 ## nombres en passant par leur ppcm
 
 def div(n):
