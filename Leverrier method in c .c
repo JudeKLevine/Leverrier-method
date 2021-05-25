@@ -12,8 +12,8 @@
 
 void affiche(float ** Matrice, int taille)
 {
-    int i;
-    int j;
+    int 	i;
+    int 	j;
  
     for(i = 0; i < taille; i++)
     {
@@ -32,7 +32,7 @@ void affiche(float ** Matrice, int taille)
  
 void affiche2(float * Vecteur, int taille)
 {
-    int i;
+    int 	i;
 
     for(i = 0; i < taille ; i++)
     {       
@@ -52,14 +52,14 @@ void affiche2(float * Vecteur, int taille)
 
 float ** produitMatrice(float ** Matrice1, float ** Matrice2, int taille)
 {
-	int i; 
-	int j;
-	int k;
-	float sum;
+	int 	 i; 
+	int 	 j;
+	int 	 k;
+	float 	 sum;
 
-	float **Tableau;
-
-    Tableau = malloc(taille*sizeof(float*));
+	float ** Tableau;
+	
+	Tableau = malloc(taille*sizeof(float*));
 
 	for(i = 0; i < taille; i++)
 	{
@@ -82,8 +82,8 @@ float ** produitMatrice(float ** Matrice1, float ** Matrice2, int taille)
 
 float TraceMatrice(float ** Matrice, int taille)
 {
-    int i;
-    float Trace;
+    int 	i;
+    float 	Trace;
     
     for(i = 0; i < taille; i++)
     {
@@ -95,9 +95,9 @@ float TraceMatrice(float ** Matrice, int taille)
 
 float ** SommeMatrice(float ** Matrice1, float ** Matrice2, int taille)
 {
-    int i;
-    int j;
-    float ** Matrice3;
+    int 	i;
+    int 	j;
+    float   ** 	Matrice3;
 
     Matrice3 = malloc(sizeof(float*)*taille);
     for(i = 0; i < taille; i++)
@@ -115,9 +115,9 @@ float ** SommeMatrice(float ** Matrice1, float ** Matrice2, int taille)
 
 float ** Produit_Matrice_CA(float ** Matrice, int taille, float constante)
 {
-    int i;
-    int j;
-    float ** Matrice1;
+    int 	i;
+    int 	j;
+    float  ** 	Matrice1;
 
     Matrice1 = malloc(sizeof(float*)*taille);
     for(i = 0; i < taille; i++)
@@ -134,9 +134,9 @@ float ** Produit_Matrice_CA(float ** Matrice, int taille, float constante)
 
 float ** Identite(int taille)
 {
-    int i;
-    int j;
-    float ** Matrice;
+    int 	i;
+    int 	j;
+    float  ** 	Matrice;
 
     Matrice = malloc(sizeof(float*)*taille);
     for(i = 0; i < taille; i++)
@@ -155,11 +155,11 @@ float ** Identite(int taille)
 
 float ** suite_matrice(float ** Matrice, int taille, int n)
 {
-    int i;
-    int j;
-    float ** Matrice2;
-    float ** Matrice3;
-    float ** Matrice1; 
+    int 	i;
+    int 	j;
+    float  ** 	Matrice2;
+    float  ** 	Matrice3;
+    float  **   Matrice1; 
 
     Matrice1 = malloc(sizeof(float*)*taille);
     for(i = 0; i < taille; i++)
@@ -181,8 +181,8 @@ float ** suite_matrice(float ** Matrice, int taille, int n)
             
 float * Polynome(float ** Matrice, int taille)
 {
-    int i; 
-    float * Coeficient;
+    int 	i; 
+    float   * 	Coeficient;
 
     Coeficient = malloc(sizeof(float) * (1 + taille));
     Coeficient[0] = pow(-1,taille);
@@ -198,10 +198,10 @@ float * Polynome(float ** Matrice, int taille)
 
 int main()
 {
-    int i;
-    int j;
-    int taille;
-    float **Matrice;
+    int 	i;
+    int 	j;
+    int 	taille;
+    float   **	Matrice;
 
     printf("Entrez la taille votre matrice\t");
     scanf("%d",&taille);
