@@ -2,10 +2,12 @@
 #include<stdlib.h>
 #include<math.h>
 
+// Cette methode permet non seulement de donner le polynome  caracteristique
+// mais aussi le determinant et le rang de la matrice, en modifiant et en 
+// rajoutant certaines fonctions
 
 //------------------------------------------------------------------//
 // affiche : affiche les valeurs contenues dans une Matrice         //
-//                                                                  //
 // Entree : le Tableau et sa taille                                 //
 // sortie : Affiche chaque element de la matrice                    //
 //------------------------------------------------------------------//
@@ -45,7 +47,6 @@ void affiche2(float * Vecteur, int taille)
 
 //--------------------------------------------------------------------//
 // ProduitMatrice : Calcul le produit de deux matrices de meme taille //
-//                                                                    //
 // Entree : les deux matrices et leur taille commune                  //
 // sortie : Renvoie la matrice produit des deux autres                //
 //--------------------------------------------------------------------//
