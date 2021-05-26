@@ -6,12 +6,12 @@
 //       prend en entrée la chaine et sa taille            //
 //---------------------------------------------------------//
 
-void affiche(char * vecteur, int taille)
+void affiche(char * chaine, int taille)
 {
     int     i;    
     for(i = 0; i < taille; i++)
     {
-        printf("%c", vecteur[i]);
+        printf("%c", chaine[i]);
     }
     printf("\n");
 }
@@ -70,25 +70,24 @@ int ** Matrice(int taille)
 int main()
 {
     int **  matrix;
-    int *   vect = calloc(2, sizeof(int));
+    char *  Mot_chiffre;
+    int  *  vect = calloc(2, sizeof(int));
     int     i;
     int     Nbr_lettre; 
     int     Nbr_vect;
-    char *  Mot_chiffre;
     char    mot[100];
 
-    matrix = Matrice(2);
+    matrix = Matrice(2); // Matrice de taille deux * deux
     
     printf("Entrez le mot à chiffrer (en miniscule) : ");
     scanf("%s", mot);
     printf("Entrez le nombre de lettre du mot : ");
     scanf("%d", &Nbr_lettre);
  
-    if(Nbr_lettre % 2 == 1)
+    if(Nbr_lettre % 2 == 1) // le cas où le nombre de lettre est impair
     {
         mot[Nbr_lettre] = 'x'; // on ajoute une lettre dans le mot à chiffrer
         Nbr_vect = 1 + Nbr_lettre / 2;
-
     }
     else Nbr_vect = Nbr_lettre / 2;
 
