@@ -1,83 +1,88 @@
 #--------------CALCUL DU POLYNOME CARACTERISTIQUE---------------#
 # Pour ce calcul, nous n'utiliserons aucune fonction predefinie #
 
-# Produit d'une matrice et un vecteur
-def produitMat(m1, m2):
+# Poduit de deux matrices
+def produitMat(Matrice1, Matrice2):
   m = []
-  if len(m1[0]) != len(m2):
+  if len(Matrice1[0]) != len(Matrice2):
     print("erreur")
     return False
-  
-  for i in range(len(m1)):
+
+  for i in range(len(Matrice1)):
+
     ligne = []
-    for j in range(len(m2[0])):
+    for j in range(len(Matrice2[0])):
+
       element = 0
-      for k in range(len(m1[0])):
-        element = element + m2[i][k] * m1[k][j]
-      ligne.append(element)
+      for k in range(len(Matrice1[0])):
+
+        element = element + Matrice2[i][k] * Matrice1[k][j]
+      ligne.append( element )
     m.append(ligne)
-    
+
   return m
 
-# La trace d'une matrice de taille n
-def traceMat(n):
+# donne la trace de la matrice
+def traceMat(Matrice):
     sum = 0
-    for i in range(len(n)):
-        for j in range(len(n)):
-            if i==j:
-                sum = sum + n[i][j]
+    for i in range(len(Matrice)):
+        sum = sum + Matrice[i][i]
     return sum
-  
+
 # somme de deux matrices
-def somme_mat(mat1,mat2):
-    k = []
-    for i in range(len(mat1)):
+def somme_mat(Matrice1, Matrice2):
+    Matrice_somme = []
+    for i in range(len(Matrice1)):
+
         colonne = []
-        for j in range(len(mat1)):
-            a = mat1[i][j] + mat2[i][j]
-            colonne.append(a)
-        k.append(colonne)
-    return k
-  
+        for j in range(len(Matrice1)):
+
+            sum = Matrice1[i][j] + Matrice2[i][j]
+            colonne.append(sum)
+        Matrice_somme.append(colonne)
+
+    return Matrice_somme
+
 # Produit d'une matrice par un scalaire
-def pro_mat_sca(mat1,b):
-    k = []
-    for i in range(len(mat1)):
+def pro_mat_sca(Matrice, scalaire):
+    Matrice_result = []
+    for i in range(len(Matrice)):
+
         colonne = []
-        for j in range(len(mat1)):
-            a = mat1[i][j]*b
-            colonne.append(a)
-        k.append(colonne)
-    return k
-  
-# La matrice identité de taille n  
-def id(n):
+        for j in range(len(Matrice)):
+
+            sum = Matrice[i][j] * scalaire
+            colonne.append(sum)
+        Matrice_result.append(colonne)
+    return Matrice_result
+
+# La matrice identité de taille n
+def id(Taille):
     L = []
-    for i in range(n):
+    for i in range(Taille):
+
         L.append([])
-    for i in range(n):
-        for j in range(n):
-            if i==j:
-                L[i].append(1)
-            else:
-                L[i].append(0)
+        for j in range(Taille):
+
+            if i == j:  L[i].append(1)
+            else:       L[i].append(0)
     return L
 
-# Matrices recursives de Leverrier 
-def calculMat(L, n):
-    M = []
-    V = id(len(L))
-    if n == 0:
-        M = L
+# Matrices recursives de Leverrier
+def calculMat(Matrice, n):
+    Matrice_rec = []
+    V = id(len(Matrice))
+    if n == 0: Matrice_rec = Matrice
     else:
-        A = -1/(n)*traceMat(calculMat(L, n-1))
-        B = pro_mat_sca(V,A)
-        C = somme_mat(calculMat(L, n-1),B)
-        M = produitMat(C,L)
-    return M
-  
-# Tableau contenant les coeficients des des mônomes ordonés 
+        A = -1 / n * traceMat(calculMat(Matrice, n - 1))
+        B = pro_mat_sca(V, A)
+        C = somme_mat(calculMat(Matrice, n - 1), B)
+        Matrice_rec = produitMat(C, Matrice)
+    return Matrice_rec
+
+# Tableau contenant les coeficients des des mônomes ordonés
 # du polynome caracterisetique de la matrice L
+
 def leverier(L):
     Coef = [(-1)**len(L)]
     L = [calculMat(L, i) for i in range(len(L))]
