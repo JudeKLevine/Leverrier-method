@@ -82,11 +82,16 @@ def calculMat(Matrice, n):
 
 # Tableau contenant les coeficients des des mônomes ordonés
 # du polynome caracterisetique de la matrice L
+def Leverier(Matrice):
 
-def leverier(Matrice):
     Coef = [(-1)**len(Matrice)]
     L = [calculMat(Matrice, i) for i in range(len(Matrice))]
     Trace = [traceMat(i)/(L.index(i) + 1) for i in L]
     for i in Trace:
         Coef.append(i)
+    if len(Matrice) == 2:
+        Coef[-1] = -Coef[-1]
     return Coef
+
+def determinant(Matrice):
+    return Leverier(Matrice)[-1]
