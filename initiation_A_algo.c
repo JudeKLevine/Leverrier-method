@@ -271,6 +271,6 @@ int main()
     //affiche(decalageDroite(Tableau, 10), 10);
     //affiche(trouvePremierPair(Tableau, 10), 2);
     tousleschiffres(Tableau, 10);
-    affiche(possedeElemMaj(Tableau, 10), 2);
+    //affiche(possedeElemMaj(Tableau, 10), 2);
 }
     
