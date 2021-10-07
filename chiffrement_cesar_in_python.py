@@ -40,5 +40,4 @@ def decesar(Phrase,decimal):
             b = (i - decimal) % 26
             L.append(b)
     return decode_mot(L)
-
 print(decesar("VXLVVH",3))
