@@ -32,9 +32,7 @@ def cesar(phrase,decimal):
 
 def decesar(Phrase,decimal):
     L = []
-
-    a = code_mots(Phrase)
-
+    a = list(map(code_une_,Phrase))
     for i in a:
         if i == -33:
             L.append(-33)
@@ -43,7 +41,4 @@ def decesar(Phrase,decimal):
             L.append(b)
     return decode_mot(L)
 
-print(cesar("KYV RIK FW GIFXIRDDZEX ZJ KYV RIK FW FIXREZQZEX TFDGCVOZKP",9))
-
-
-
+print(decesar("VXLVVH",3))
