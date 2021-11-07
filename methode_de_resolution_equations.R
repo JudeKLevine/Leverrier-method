@@ -22,13 +22,10 @@ Dichotomie(f, -2, -1, 0.000002) # -1.841405
 ### METHODE DE NEWTON
 Newton_method=function(Fc, f, a, e) # avec f, la derivée de Fc
 {
-  if(abs(Fc(a) < e)){ return(a)}
+  if(abs(Fc(a) < e)){return(a)}
   else
     {
-      while(abs(Fc(a)) > e)
-      {
-        a = a - Fc(a)/f(a)  
-      }
+      while(abs(Fc(a)) > e) {a = a - Fc(a)/f(a) }
       return(a)
   }
 }
