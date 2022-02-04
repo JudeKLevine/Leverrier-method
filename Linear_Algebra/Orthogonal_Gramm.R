@@ -1,6 +1,6 @@
 # --- Ce programme n'utilise que des fonctions de bases du langage
 # --- TOus les outils de calcul matricielle ont été reprogrammé
-# --- Il aurait été plus simple en utilisant les packages
+# --- Il aurait été plus simple en utilisant les fonctions deja defines
 
 
 #--------------------------------------------------------------------//
