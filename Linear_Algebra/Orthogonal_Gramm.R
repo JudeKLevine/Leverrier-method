@@ -89,8 +89,8 @@ Projection=function(Vecteur1, Vecteur2){
 # une base orthonormée
 Orthogonal_Gramm=function(Matrice){ # ici matrice represente les vecteurs de la
                                     # base que l'on veut orthogonalisé
-  tailleC = length(Matrice[,1])  
-  tailleN = length(Matrice[1,])
+  tailleN = length(Matrice[,1])  
+  tailleC = length(Matrice[1,])
   Base = matrix(NA, nrow = tailleN, ncol = tailleC)
       Base[,1] = Matrice[,1]
       for(i in 2:tailleC){
