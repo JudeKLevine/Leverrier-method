@@ -1,5 +1,5 @@
 #--------------------------------------------------------------------//
-#                   Orthogonalisation de Gramm Schmidt               //
+#                   Orthogonalisation de Gram Schmidt               //
 #     Entree : Une matrice(la matrice d'une base)                    //
 #     sortie : Matrice de la base orthogonalisée                     //
 # -------------------------------------------------------------------//
@@ -27,7 +27,7 @@ Projection=function(Vecteur1, Vecteur2){
 # il suffit diviser chaque vecteur par sa norme pour avoir 
 # une base orthonormée
 
-Orthogonal_Gramm=function(Matrice){ # ici matrice represente les vecteurs de la
+Orthogonal_Gram=function(Matrice){ # ici matrice represente les vecteurs de la
                                     # base que l'on veut orthogonalisé
   tailleN = length(Matrice[,1])  
   tailleC = length(Matrice[1,])
@@ -51,7 +51,7 @@ Orthogonal_Gramm=function(Matrice){ # ici matrice represente les vecteurs de la
 # TEst 1
 A = matrix(c(c(3,2),c(1,2)),  ncol=2, nrow=2, byrow = TRUE)
 A
-Orthogonal_Gramm(A)
+Orthogonal_Gram(A)
 
 # TESt 2 : Matrice de HIlbert
 M = matrix(NA, ncol = 2, nrow = 2)
@@ -60,11 +60,11 @@ for (i in 1:2){
     M[i,j] = 1/(i+j-1)
   }
 }
-Orthogonal_Gramm(M)
+Orthogonal_Gram(M)
 
 # Test 3 : 
 Mat = matrix(c (c(1,1,1), c(1,-1,0)), nrow = 2, ncol = 3 , byrow=TRUE)
 Mat
-round(Orthogonal_Gramm(Mat), 2)
+round(Orthogonal_Gram(Mat), 2)
 
 
