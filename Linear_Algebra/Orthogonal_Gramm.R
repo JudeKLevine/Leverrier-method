@@ -62,11 +62,7 @@ Transpose=function(Matrice){
 # Renvoie la norme d'un vecteur
 Norme=function(Vecteur){
   
-  N = 0
-  taille = length(Vecteur)
-  
-  for(i in 1:taille){
-    N = N + Vecteur[i]*Vecteur[i]
+  N = sum(Vecteur * Vecteur)
   }
   return(sqrt(N))
 }
