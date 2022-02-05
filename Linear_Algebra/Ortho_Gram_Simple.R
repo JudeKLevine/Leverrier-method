@@ -14,7 +14,7 @@ vecteur=function(Vect){ # Beaucoup plus simple pour avoir des vecteurs
 # projection de vecteur2 sur col(Vecteur1)
 Projection=function(Vecteur1, Vecteur2){
     
-    if(norm(Vecteur1) == 0){
+    if(norm(Vecteur1, type = '2') == 0){
         print('VECTEUR NUL')
     }
     MatriceP = matrix(NA, ncol = length(Vecteur1), nrow = length(Vecteur1))
